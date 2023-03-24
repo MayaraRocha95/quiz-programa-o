@@ -29,8 +29,12 @@ console.log (state,action);
                 ...state,
                 questions:reorderQuestions,
             };
-
-
+        case "CHANGE_QUESTION":
+            const nexQuestion = state.currentQuestion + 1;
+            return {
+                ...state,
+                currentQuestion: nexQuestion,
+            }
        default:
         return state;
     }

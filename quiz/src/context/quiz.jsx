@@ -21,6 +21,15 @@ console.log (state,action);
             gameStage: STAGES[1],
          };
 
+        case "REORDER_QUESTIONS":
+           const reorderQuestions = questions.sort(() => {
+            return Math.random() - 0.5;
+           });
+            return{
+                ...state,
+                questions:reorderQuestions,
+            };
+
 
        default:
         return state;
